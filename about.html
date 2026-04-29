@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Barasa Godwil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .about-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .about-text .highlight {
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #b8c5d6;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: rgba(26, 31, 58, 0.8);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            max-width: 350px;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .profile-info h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info p {
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .skills-section {
+            padding: 80px 0;
+            background: rgba(26, 31, 58, 0.5);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: rgba(26, 31, 58, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .skill-category h3 {
+            color: #00d4ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #b8c5d6;
+        }
+
+        .skill-item i {
+            color: #00d4ff;
+            margin-right: 1rem;
+            width: 20px;
+        }
+
+        .experience-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(0, 212, 255, 0.3);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            left: 0;
+            right: 52%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            left: 52%;
+            right: 0;
+        }
+
+        .timeline-content {
+            position: relative;
+            background: rgba(26, 31, 58, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 1.5rem;
+            width: 20px;
+            height: 20px;
+            background: #00d4ff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .timeline-date {
+            color: #00d4ff;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: #b8c5d6;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-text h1 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                left: 60px;
+                right: 0;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Barasa Godwil</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="about-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h1>About <span class="highlight">Barasa Godwil</span></h1>
+                    <p>
+                        I'm a passionate web developer based in Mbale, Uganda, with over 5 years of experience in creating innovative digital solutions. My journey in web development began with a curiosity about how websites work and evolved into a career dedicated to building exceptional online experiences.
+                    </p>
+                    <p>
+                        I specialize in modern web technologies and have helped numerous businesses establish their online presence through custom websites, e-commerce platforms, and web applications. My approach combines technical expertise with creative problem-solving to deliver solutions that not only look great but also drive results.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers in the local community.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="portfolio.html" class="btn btn-primary">View My Work</a>
+                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Barasa Godwil</h3>
+                            <p>Full Stack Developer</p>
+                            <p style="color: #b8c5d6; font-size: 0.9rem;">
+                                <i class="fas fa-map-marker-alt"></i> Mbale, Uganda<br>
+                                <i class="fas fa-envelope"></i> barasa@example.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend Development</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fas fa-check"></i> HTML5 & CSS3</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> JavaScript (ES6+)</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> React.js & Next.js</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> Vue.js & Nuxt.js</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> TypeScript</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> Tailwind CSS</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> Bootstrap & Material UI</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend Development</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fas fa-check"></i> Node.js & Express.js</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> Python & Django</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> PHP & Laravel</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> RESTful APIs</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> GraphQL</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> WebSocket</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> Microservices Architecture</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Database & DevOps</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><i class="fas fa-check"></i> MySQL & PostgreSQL</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> MongoDB & Redis</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> Docker & Kubernetes</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> AWS & Google Cloud</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> CI/CD Pipelines</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> Git & Version Control</li>
+                        <li class="skill-item"><i class="fas fa-check"></i> Agile & Scrum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 - Present</div>
+                        <div class="timeline-title">Full Stack Developer - Freelance</div>
+                        <div class="timeline-description">
+                            Working with clients worldwide to build custom web applications, e-commerce platforms, and digital solutions. Specializing in modern JavaScript frameworks and cloud deployment.
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019 - 2021</div>
+                        <div class="timeline-title">Web Developer - TechHub Uganda</div>
+                        <div class="timeline-description">
+                            Led development of multiple client projects, mentored junior developers, and implemented best practices for web development workflows.
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2019</div>
+                        <div class="timeline-title">Junior Developer - Digital Agency</div>
+                        <div class="timeline-description">
+                            Developed responsive websites and web applications for various clients, gained experience in frontend and backend technologies.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Barasa Godwil</h3>
+                    <p>Professional Web Developer based in Mbale, Uganda. Creating digital solutions that matter.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">E-Commerce</a></li>
+                        <li><a href="services.html">Responsive Design</a></li>
+                        <li><a href="services.html">Support & Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Mbale, Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> barasa@example.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Barasa Godwil. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
